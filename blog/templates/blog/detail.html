@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<article class="media content-section"  style="padding: 2%;">
+
+ <div class="row">
+    <div class col-md-10>
+        <img src="{% static 'images/MIT.jpg' %}" height="500" class=""  alt="">
+    </div>
+    <div class="col-md-10">
+        <h2><a class="article-title" href="#">{{ value.title }}</a></h2>
+        <p class="article-content">{{ value.content }}</p>
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ value.author }}</a>
+            <small class="text-muted">{{ value.date_posted | date:"F d, Y" }}</small>
+        </div>
+
+    </div>
+  </div>
+</article>
+{% endblock content %}
