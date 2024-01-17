@@ -10,3 +10,6 @@ def home(request):
 
 def about(request):
     return render(request, "blog/about.html", {"title": "About"})
+def detail(request, id):
+    post = Post.objects.get(pk=id)
+    return render(request, 'blog/detail.html', {'value': post})
